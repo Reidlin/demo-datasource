@@ -1,5 +1,6 @@
 package com.study.aop.multi.datasource.service.impl;
 
+import com.study.aop.multi.datasource.datasource.MultiDataSourceTransactional;
 import com.study.aop.multi.datasource.entity.master.User;
 import com.study.aop.multi.datasource.entity.slave.User2;
 import com.study.aop.multi.datasource.mapper.master.UserMapper;
@@ -26,15 +27,15 @@ public class UserServiceImpl implements IUserService {
     private UserMapper2 userMapper2;
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
+    @MultiDataSourceTransactional(transactionManagers = {"masterTransactionManager", "slaveTransactionManager"})
     public void addUser() {
         User user = new User();
-        user.setUsername("wangw");
+        user.setUsername("wangw2");
         user.setPassword("E4B455865F900DBB");
         userMapper.insert(user);
 
         User2 user2 = new User2();
-        user2.setUsername("wangw");
+        user2.setUsername("wangw2");
         user2.setPassword("E4B455865F900DBB");
         userMapper2.insert(user2);
     }
