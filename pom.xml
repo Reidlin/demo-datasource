@@ -16,7 +16,6 @@
     <properties>
         <java.version>1.8</java.version>
         <mysql.verison>5.1.47</mysql.verison>
-        <lombok.version>1.18.6</lombok.version>
     </properties>
 
     <parent>
@@ -50,12 +49,6 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.verison}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
