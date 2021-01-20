@@ -7,7 +7,7 @@ import tk.mybatis.mapper.common.Mapper;
  *
  * </p>
  *
- * @author LeiDuLin
+ * @author DuLing
  * @since 2021/1/19
  */
 public interface BaseMapper<T> extends Mapper<T> {

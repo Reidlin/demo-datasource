@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * 多数据源事务注解
  * </p>
  *
- * @author LeiDuLin
+ * @author DuLing
  * @since 2021/1/19
  */
 

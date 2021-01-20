@@ -5,7 +5,7 @@ package com.study.dynamic.datasource.service;
  *
  * </p>
  *
- * @author LeiDuLin
+ * @author DuLing
  * @since 2021/1/20
  */
 public interface IUserService {

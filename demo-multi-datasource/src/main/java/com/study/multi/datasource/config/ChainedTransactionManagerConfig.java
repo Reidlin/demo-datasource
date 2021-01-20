@@ -11,7 +11,7 @@ import org.springframework.transaction.PlatformTransactionManager;
  * 链式事务配置
  * </p>
  *
- * @author LeiDuLin
+ * @author DuLing
  * @since 2021/1/20
  */
 
