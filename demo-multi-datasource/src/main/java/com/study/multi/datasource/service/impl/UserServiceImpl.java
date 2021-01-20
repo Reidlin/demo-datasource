@@ -26,12 +26,16 @@ public class UserServiceImpl implements IUserService {
     private UserMapper2 userMapper2;
 
     @Override
-    public User getUser(Integer userId) {
-        return userMapper.selectByPrimaryKey(userId);
-    }
+    @Transactional(rollbackFor = Exception.class)
+    public void addUser() {
+        User user = new User();
+        user.setUsername("zs");
+        user.setPassword("E4B455865F900DBB");
+        userMapper.insert(user);
 
-    @Override
-    public User2 getUser2(Integer userId) {
-        return userMapper2.selectByPrimaryKey(userId);
+        User2 user2 = new User2();
+        user2.setUsername("zs");
+        user2.setPassword("E4B455865F900DBB");
+        userMapper2.insert(user2);
     }
 }
