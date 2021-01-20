@@ -26,15 +26,15 @@ public class UserServiceImpl implements IUserService {
     private UserMapper2 userMapper2;
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class, transactionManager = "chainedTransactionManager")
     public void addUser() {
         User user = new User();
-        user.setUsername("zs");
+        user.setUsername("zs3");
         user.setPassword("E4B455865F900DBB");
         userMapper.insert(user);
 
         User2 user2 = new User2();
-        user2.setUsername("zs");
+        user2.setUsername("zs3");
         user2.setPassword("E4B455865F900DBB");
         userMapper2.insert(user2);
     }
