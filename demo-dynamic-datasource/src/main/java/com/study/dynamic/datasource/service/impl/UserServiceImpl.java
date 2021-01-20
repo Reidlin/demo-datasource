@@ -2,10 +2,8 @@ package com.study.dynamic.datasource.service.impl;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.study.dynamic.datasource.entity.User;
-import com.study.dynamic.datasource.entity.Wallet;
 import com.study.dynamic.datasource.mapper.UserMapper;
-import com.study.dynamic.datasource.mapper.WalletMapper;
-import com.study.dynamic.datasource.service.IDemoService;
+import com.study.dynamic.datasource.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,25 +13,30 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author LeiDuLin
- * @since 2021/1/19
+ * @since 2021/1/20
  */
 
 @Service
-public class DemoServiceImpl implements IDemoService {
+public class UserServiceImpl implements IUserService {
+
     @Autowired
     private UserMapper userMapper;
-    @Autowired
-    private WalletMapper walletMapper;
 
     @Override
     @DS("master")
-    public void addUser(User user) {
+    public void addUser() {
+        User user = new User();
+        user.setUsername("zhangsan");
+        user.setPassword("E4B455865F900DBB");
         userMapper.insert(user);
     }
 
     @Override
     @DS("slave")
-    public void addWallet(Wallet wallet) {
-        walletMapper.insert(wallet);
+    public void addUser2() {
+        User user = new User();
+        user.setUsername("zhangsan");
+        user.setPassword("E4B455865F900DBB");
+        userMapper.insert(user);
     }
 }

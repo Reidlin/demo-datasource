@@ -1,10 +1,7 @@
 package com.study.multi.datasource;
 
-import com.study.multi.datasource.entity.master.User;
-import com.study.multi.datasource.entity.slave.User2;
-import com.study.multi.datasource.mapper.master.UserMapper;
-import com.study.multi.datasource.mapper.slave.UserMapper2;
 import com.study.multi.datasource.service.IUserService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * <p>
- *
+ * 单元测试
  * </p>
  *
  * @author LeiDuLin
@@ -23,24 +20,12 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest(classes = DemoMultiDatasourceApplication.class)
 @ExtendWith(SpringExtension.class)
 public class DemoMultiDatasourceApplicationTest {
-    @Autowired
-    private UserMapper userMapper;
-    @Autowired
-    private UserMapper2 userMapper2;
+
     @Autowired
     private IUserService userService;
 
     @Test
-    public void testFind() {
-        User user = userMapper.selectByPrimaryKey(1);
-        System.out.println(user.getUsername());
-
-        User2 user2 = userMapper2.selectByPrimaryKey(1);
-        System.out.println(user2.getUsername());
-    }
-
-
-    @Test
+    @DisplayName("测试数据新增")
     public void testInsertUser() {
         userService.addUser();
     }
