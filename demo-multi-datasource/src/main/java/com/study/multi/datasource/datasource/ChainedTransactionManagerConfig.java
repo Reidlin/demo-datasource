@@ -1,4 +1,4 @@
-package com.study.multi.datasource.config;
+package com.study.multi.datasource.datasource;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
