@@ -10,6 +10,7 @@
     <modules>
         <module>demo-dynamic-datasource</module>
         <module>demo-multi-datasource</module>
+        <module>demo-aop-multi-datasource</module>
     </modules>
 
     <properties>
